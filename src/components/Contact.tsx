@@ -48,19 +48,19 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      value: "hello@innovateconsult.in",
-      action: "mailto:hello@innovateconsult.in"
+      value: "aumconsultants@gmail.com",
+      action: "mailto:aumconsultants@gmail.com"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      value: "+91 98765 43210",
-      action: "tel:+919876543210"
+      value: "+91 9910972300​",
+      action: "tel:+919910972300"
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Visit Us",
-      value: "Mumbai, Maharashtra, India",
+      value: "Delhi,India",
       action: "#"
     }
   ];
@@ -141,7 +141,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="professional-input"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 1234567890"
                   />
                 </div>
 
@@ -254,11 +254,11 @@ const Contact = () => {
                 <div className="space-y-2 text-primary-foreground/80">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
-                    <span>9:00 AM - 6:00 PM</span>
+                    <span>11:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday</span>
-                    <span>10:00 AM - 4:00 PM</span>
+                    <span>By Appointment Only</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday</span>

@@ -1,8 +1,8 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,29 +14,41 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(titleRef.current, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' });
-      gsap.fromTo(subtitleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, delay: 0.2, ease: 'power3.out' });
-      gsap.fromTo(buttonsRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.4, ease: 'back.out(1.5)' });
-      gsap.to('.floating-shape', {
-        y: 'random(-20, 20)',
-        x: 'random(-15, 15)',
-        duration: 'random(3,5)',
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }
+      );
+      gsap.fromTo(
+        subtitleRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.7, delay: 0.2, ease: "power3.out" }
+      );
+      gsap.fromTo(
+        buttonsRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.6, delay: 0.4, ease: "back.out(1.5)" }
+      );
+      gsap.to(".floating-shape", {
+        y: "random(-20, 20)",
+        x: "random(-15, 15)",
+        duration: "random(3,5)",
         repeat: -1,
         yoyo: true,
-        ease: 'sine.inOut',
+        ease: "sine.inOut",
       });
     }, heroRef);
     return () => ctx.revert();
   }, []);
 
   const scrollToContact = () => {
-    const el = document.getElementById('contact');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToServices = () => {
-    const el = document.getElementById('services');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById("services");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -56,7 +68,9 @@ const Hero = () => {
         {/* Badge */}
         <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 mb-4 sm:mb-6 mx-auto lg:mx-0 text-sm sm:text-base">
           <Sparkles className="h-4 w-4 text-accent animate-pulse" />
-          <span className="text-white/90 font-medium">Trusted by 50+ Growing Businesses</span>
+          <span className="text-white/90 font-medium">
+            Trusted by Growing Businesses
+          </span>
         </div>
 
         {/* Title */}
@@ -64,8 +78,10 @@ const Hero = () => {
           ref={titleRef}
           className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-6"
         >
-          Empowering Local Businesses & MSMEs to{' '}
-          <span className="bg-gradient-accent bg-clip-text text-transparent">Thrive in the Digital Era</span>
+          Transform Your Digital Presence Into​{" "}
+          <span className="bg-gradient-accent bg-clip-text text-transparent">
+            Strategic Impact
+          </span>
         </h1>
 
         {/* Subtitle */}
@@ -73,11 +89,15 @@ const Hero = () => {
           ref={subtitleRef}
           className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0"
         >
-          Unlock your brand’s digital potential with strategic insights, AI-driven tools, and expert guidance — built for sustainable growth.
+          AUM Consultants blends research, creativity, and digital intelligence
+          to help brands build influence, trust, and measurable growth.
         </p>
 
         {/* CTA Buttons */}
-        <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <div
+          ref={buttonsRef}
+          className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+        >
           <Button
             onClick={scrollToContact}
             className="relative btn-accent text-sm sm:text-base md:text-lg px-6 sm:px-10 py-3 sm:py-4 group overflow-hidden"
@@ -94,7 +114,9 @@ const Hero = () => {
             variant="outline"
             className="relative bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-primary text-sm sm:text-base md:text-lg px-6 sm:px-10 py-3 sm:py-4 group overflow-hidden"
           >
-            <span className="relative z-10 flex items-center justify-center">Explore Our Services</span>
+            <span className="relative z-10 flex items-center justify-center">
+              Explore Our Services
+            </span>
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </Button>
         </div>

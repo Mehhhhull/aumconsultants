@@ -117,12 +117,12 @@ const VisionMission = () => {
     {
       icon: <Target className="h-8 w-8" />,
       title: "Our Vision",
-      description: "To be India's most trusted partner in helping MSMEs and local businesses thrive through digital transformation and AI adoption."
+      description: "To transform how brands connect, communicate, and create impact — through research-driven creativity, cultural intelligence, and digital transformation consulting."
     },
     {
       icon: <Eye className="h-8 w-8" />,
       title: "Our Mission", 
-      description: "Providing practical, scalable digital solutions that empower businesses to grow, compete, and succeed in the modern economy."
+      description: "To empower brands with authentic, insight-led, and measurable growth strategies, combining the precision of data with the depth of human understanding."
     }
   ];
 
@@ -134,8 +134,7 @@ const VisionMission = () => {
             Built on Trust, Driven by Results
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We understand the challenges facing small and medium businesses in today's digital landscape. 
-            Our approach is rooted in practical solutions that deliver measurable results.
+           At AUM Consultants, we blend data-driven insights, creativity, and strategic consulting to transform organizations into purpose-driven, future-ready brands. We bridge strategy with storytelling, technology with emotion, and insight with execution to deliver measurable impact for every client.
           </p>
         </div>
 
