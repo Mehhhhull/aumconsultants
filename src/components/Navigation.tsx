@@ -11,26 +11,26 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const linksRef = useRef<(HTMLButtonElement | null)[]>([]);
+  const isBlogPage = typeof window !== 'undefined' && window.location.pathname.includes('/blog');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial animation for nav items
       linksRef.current.forEach((link, index) => {
         if (link) {
-          gsap.fromTo(link,
+          gsap.fromTo(
+            link,
             { opacity: 0, y: -20 },
-            { 
-              opacity: 1, 
-              y: 0, 
-              duration: 0.3, 
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.3,
               delay: index * 0.05 + 0.1,
-              ease: 'power2.out'
+              ease: 'power2.out',
             }
           );
         }
       });
 
-      // Navbar background on scroll
       gsap.to(navRef.current, {
         backgroundColor: 'rgba(255, 255, 255, 0.98)',
         boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.1)',
@@ -38,8 +38,8 @@ const Navigation = () => {
           trigger: document.body,
           start: '100px top',
           end: '101px top',
-          toggleActions: 'play none none reverse'
-        }
+          toggleActions: 'play none none reverse',
+        },
       });
     }, navRef);
 
@@ -55,31 +55,70 @@ const Navigation = () => {
   };
 
   return (
-    <nav ref={navRef} className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border z-50 transition-all duration-300">
+    <nav
+      ref={navRef}
+      className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border z-50 transition-all duration-300"
+    >
       <div className="container-max">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Logo />
+          <div onClick={() => (window.location.href = '/')} className="cursor-pointer">
+            <Logo />
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <button ref={(el) => (linksRef.current[0] = el)} onClick={() => scrollToSection('hero')} className="nav-link">
+            <button
+              ref={(el) => (linksRef.current[0] = el)}
+              onClick={() => (window.location.href = '/')}
+              className="nav-link"
+            >
               Home
             </button>
-            <button ref={(el) => (linksRef.current[1] = el)} onClick={() => scrollToSection('about')} className="nav-link">
-              About
-            </button>
-            <button ref={(el) => (linksRef.current[2] = el)} onClick={() => scrollToSection('services')} className="nav-link">
-              Services
-            </button>
-            <button ref={(el) => (linksRef.current[3] = el)} onClick={() => scrollToSection('contact')} className="nav-link">
-              Contact
-            </button>
+
+            {!isBlogPage && (
+              <>
+                <button
+                  ref={(el) => (linksRef.current[1] = el)}
+                  onClick={() => scrollToSection('about')}
+                  className="nav-link"
+                >
+                  About
+                </button>
+                <button
+                  ref={(el) => (linksRef.current[2] = el)}
+                  onClick={() => scrollToSection('services')}
+                  className="nav-link"
+                >
+                  Services
+                </button>
+                <button
+                  ref={(el) => (linksRef.current[3] = el)}
+                  onClick={() => scrollToSection('contact')}
+                  className="nav-link"
+                >
+                  Contact
+                </button>
+              </>
+            )}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button ref={(el) => (linksRef.current[4] = el as HTMLButtonElement | null)} onClick={() => scrollToSection('contact')} className="btn-accent">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex space-x-4">
+            <Button
+              ref={(el) => (linksRef.current[4] = el as HTMLButtonElement | null)}
+              onClick={() => (window.location.href = '/blog')}
+              className="btn-accent text-white transition-all duration-300"
+              style={{ backgroundColor: '#203A60' }}
+            >
+              Blog
+            </Button>
+
+            <Button
+              ref={(el) => (linksRef.current[5] = el as HTMLButtonElement | null)}
+              onClick={() => scrollToSection('contact')}
+              className="btn-accent"
+            >
               Get Started
             </Button>
           </div>
@@ -98,19 +137,51 @@ const Navigation = () => {
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border animate-fade-in">
           <div className="px-4 py-4 space-y-4">
-            <button onClick={() => scrollToSection('hero')} className="block w-full text-left nav-link">
+            <button
+              onClick={() => (window.location.href = '/')}
+              className="block w-full text-left nav-link"
+            >
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="block w-full text-left nav-link">
-              About
-            </button>
-            <button onClick={() => scrollToSection('services')} className="block w-full text-left nav-link">
-              Services
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="block w-full text-left nav-link">
-              Contact
-            </button>
-            <Button onClick={() => scrollToSection('contact')} className="btn-accent w-full mt-4">
+
+            {!isBlogPage && (
+              <>
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="block w-full text-left nav-link"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection('services')}
+                  className="block w-full text-left nav-link"
+                >
+                  Services
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="block w-full text-left nav-link"
+                >
+                  Contact
+                </button>
+              </>
+            )}
+
+            <Button
+              onClick={() => {
+                window.location.href = '/blog';
+                setIsOpen(false);
+              }}
+              className="w-full btn-accent text-white transition-all duration-300"
+              style={{ backgroundColor: '#203A60' }}
+            >
+              Blog
+            </Button>
+
+            <Button
+              onClick={() => scrollToSection('contact')}
+              className="btn-accent w-full mt-2"
+            >
               Get Started
             </Button>
           </div>
