@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,9 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const linksRef = useRef<(HTMLButtonElement | null)[]>([]);
-  const isBlogPage = typeof window !== 'undefined' && window.location.pathname.includes('/blog');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isBlogPage = location.pathname.includes('/blog');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -62,7 +65,7 @@ const Navigation = () => {
       <div className="container-max">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div onClick={() => (window.location.href = '/')} className="cursor-pointer">
+          <div onClick={() => navigate('/')} className="cursor-pointer">
             <Logo />
           </div>
 
@@ -70,7 +73,7 @@ const Navigation = () => {
           <div className="hidden md:flex space-x-8">
             <button
               ref={(el) => (linksRef.current[0] = el)}
-              onClick={() => (window.location.href = '/')}
+              onClick={() => navigate('/')}
               className="nav-link"
             >
               Home
@@ -107,7 +110,7 @@ const Navigation = () => {
           <div className="hidden md:flex space-x-4">
             <Button
               ref={(el) => (linksRef.current[4] = el as HTMLButtonElement | null)}
-              onClick={() => (window.location.href = '/blog')}
+              onClick={() => navigate('/blog')}
               className="btn-accent text-white transition-all duration-300"
               style={{ backgroundColor: '#203A60' }}
             >
@@ -138,7 +141,10 @@ const Navigation = () => {
         <div className="md:hidden bg-background border-b border-border animate-fade-in">
           <div className="px-4 py-4 space-y-4">
             <button
-              onClick={() => (window.location.href = '/')}
+              onClick={() => {
+                navigate('/');
+                setIsOpen(false);
+              }}
               className="block w-full text-left nav-link"
             >
               Home
@@ -169,7 +175,7 @@ const Navigation = () => {
 
             <Button
               onClick={() => {
-                window.location.href = '/blog';
+                navigate('/blog');
                 setIsOpen(false);
               }}
               className="w-full btn-accent text-white transition-all duration-300"
