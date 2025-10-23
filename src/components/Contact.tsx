@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,13 +26,25 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        'service_d9sswf1',  // 🔹 Replace with your actual EmailJS Service ID
+        'template_6tkhcam', // 🔹 Replace with your Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+        },
+        'KbDs-efPAQIb4CxAD'   // 🔹 Replace with your Public Key
+      );
+
       toast({
         title: "Message Sent Successfully!",
         description: "We'll get back to you within 24 hours.",
       });
-      
+
       setFormData({
         name: '',
         email: '',
@@ -39,9 +52,16 @@ const Contact = () => {
         company: '',
         message: ''
       });
-      
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to Send Message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -60,7 +80,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Visit Us",
-      value: "Delhi,India",
+      value: "Delhi, India",
       action: "#"
     }
   ];
@@ -76,7 +96,6 @@ const Contact = () => {
   return (
     <section id="contact" className="section-padding bg-gradient-primary">
       <div className="container-max">
-        {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
             Ready to Transform Your Business?
@@ -88,7 +107,6 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Contact Form */}
           <div className="professional-card bg-background animate-slide-left">
             <h3 className="font-heading text-2xl font-bold text-foreground mb-6">
               Send Us a Message
@@ -182,18 +200,10 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="btn-primary w-full text-lg py-4"
               >
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    Send Message
-                    <Send className="ml-2 h-5 w-5" />
-                  </>
-                )}
+                {isSubmitting ? "Sending..." : <>Send Message<Send className="ml-2 h-5 w-5" /></>}
               </Button>
             </form>
 
-            {/* Benefits */}
             <div className="mt-8 p-6 bg-secondary/30 rounded-xl">
               <h4 className="font-heading font-semibold text-foreground mb-4">
                 What to Expect:
@@ -209,7 +219,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Information */}
           <div className="animate-slide-right">
             <div className="space-y-8">
               <div>
@@ -223,7 +232,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Contact Methods */}
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <a
@@ -246,7 +254,6 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Business Hours */}
               <div className="p-6 bg-white/10 rounded-xl">
                 <h4 className="font-heading font-semibold text-primary-foreground mb-4">
                   Business Hours
@@ -267,7 +274,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Response Time */}
               <div className="p-6 bg-accent/20 rounded-xl border border-accent/30">
                 <h4 className="font-heading font-semibold text-primary-foreground mb-2">
                   Quick Response Guaranteed

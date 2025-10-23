@@ -130,32 +130,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="py-8 border-t border-white/20">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="font-heading font-semibold text-lg mb-2">
-                Stay Updated
-              </h3>
-              <p className="text-primary-foreground/80">
-                Get the latest insights on digital transformation and business
-                growth strategies.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
-              />
-              <button className="btn-accent px-6 py-3 rounded-lg font-medium hover:shadow-medium transition-all duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="py-6 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center text-primary-foreground/60 mb-4">
