@@ -63,35 +63,35 @@ const About = () => {
     return () => ctx.revert();
   }, []);
 
+  const achievements = [
+    {
+      icon: <Award className="h-6 w-6" />,
+      title: "Industry Recognition",
+      description:
+        "Certified digital strategy and transformation specialist with proven expertise.",
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Client Success",
+      description:
+        "50+ brands empowered with measurable growth and impactful digital strategies.",
+    },
+    {
+      icon: <Target className="h-6 w-6" />,
+      title: "Results-Driven",
+      description:
+        "Delivered average 40% improvement in operational efficiency and brand performance.",
+    },
+  ];
 
-const achievements = [
-  {
-    icon: <Award className="h-6 w-6" />,
-    title: "Industry Recognition",
-    description: "Certified digital strategy and transformation specialist with proven expertise."
-  },
-  {
-    icon: <Users className="h-6 w-6" />,
-    title: "Client Success",
-    description: "50+ brands empowered with measurable growth and impactful digital strategies."
-  },
-  {
-    icon: <Target className="h-6 w-6" />,
-    title: "Results-Driven",
-    description: "Delivered average 40% improvement in operational efficiency and brand performance."
-  }
-];
-
-const expertise = [
-  "Strategic Content & Brand Consulting",
-  "Design & Experience Strategy",
-  "Analytics & Performance Intelligence",
-  "Digital Transformation & AI Integration",
-  "MSME Growth & Business Consulting",
-  "Industry-Specific Strategy & Guidance"
-];
-
-
+  const expertise = [
+    "Strategic Content & Brand Consulting",
+    "Design & Experience Strategy",
+    "Analytics & Performance Intelligence",
+    "Digital Transformation & AI Integration",
+    "MSME Growth & Business Consulting",
+    "Industry-Specific Strategy & Guidance",
+  ];
 
   return (
     <section
@@ -124,11 +124,20 @@ const expertise = [
               </h3>
 
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Founded with the mission to help brands harness the power of digital strategy, AUM Consultants blends creativity, data, and technology to deliver measurable growth. We recognize that every organization has unique goals, challenges, and audiences, and our solutions are tailored to fit each context.
+                Founded with the mission to help brands harness the power of
+                digital strategy, AUM Consultants blends creativity, data, and
+                technology to deliver measurable growth. We recognize that every
+                organization has unique goals, challenges, and audiences, and
+                our solutions are tailored to fit each context.
               </p>
 
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Our team brings together strategic insight, industry experience, and hands-on expertise to guide brands through meaningful transformation. From startups to established enterprises, we help organizations strengthen their digital presence, connect with their audiences, and achieve sustainable, purpose-driven impact.
+                Our team brings together strategic insight, industry experience,
+                and hands-on expertise to guide brands through meaningful
+                transformation. From startups to established enterprises, we
+                help organizations strengthen their digital presence, connect
+                with their audiences, and achieve sustainable, purpose-driven
+                impact.
               </p>
 
               {/* Expertise Areas */}
@@ -192,15 +201,20 @@ const expertise = [
               </h3>
 
               <p className="text-accent font-medium mb-4">
-               Founder & Principal Consultant, AUM Consultants
+                Founder & Principal Consultant, AUM Consultants
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                With over 8 years of experience in business consulting and
-                digital transformation, Rajesh has helped dozens of MSMEs
-                successfully transition to digital-first operations. His
-                practical approach combines strategic thinking with hands-on
-                implementation expertise.
+                With over 12 years of experience across leading Internet and
+                technology companies — Urban Company, DeNA (Pococha), BIGO,
+                Kwai, and PVR Cinemas — Jitesh brings deep expertise in business
+                development, operations, and strategic growth consulting. He has
+                built and scaled teams across India and Southeast Asia,
+                specializing in creator ecosystems, content strategy, and
+                digital community development. At AUM Consultants, Jitesh
+                applies this cross-functional experience to help organizations
+                move beyond vanity metrics and achieve sustainable digital
+                impact.
               </p>
 
               {/* Founder Achievements */}
