@@ -200,11 +200,11 @@ const VisionMission = () => {
         <div ref={statsRef} className="mt-20 bg-gradient-primary rounded-2xl p-8 md:p-12 text-center">
           <div className="grid md:grid-cols-3 gap-8 text-primary-foreground">
             <div>
-              <div className="stat-number text-4xl md:text-5xl font-bold mb-2" data-value="50" data-original="50+">50+</div>
+              <div className="stat-number text-4xl md:text-5xl font-bold mb-2" data-value="15" data-original="15+">15+</div>
               <div className="text-lg opacity-90">Businesses Transformed</div>
             </div>
             <div>
-              <div className="stat-number text-4xl md:text-5xl font-bold mb-2" data-value="95" data-original="95%">95%</div>
+              <div className="stat-number text-4xl md:text-5xl font-bold mb-2" data-value="96" data-original="96%">96%</div>
               <div className="text-lg opacity-90">Client Satisfaction Rate</div>
             </div>
             <div>
