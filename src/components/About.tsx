@@ -247,49 +247,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
-        {/* Values Section */}
-        <div className="mt-20 text-center">
-          <h3 className="font-heading text-2xl font-bold text-foreground mb-8">
-            Our Core Values
-          </h3>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                word: "Trusted",
-                description:
-                  "Building relationships through reliability and expertise",
-              },
-              {
-                word: "Transparent",
-                description: "Clear communication and honest guidance always",
-              },
-              {
-                word: "Scalable",
-                description: "Solutions that grow with your business needs",
-              },
-              {
-                word: "Practical",
-                description:
-                  "Real-world approaches that deliver measurable results",
-              },
-            ].map((value, index) => (
-              <div
-                key={index}
-                className="p-6 bg-background rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h4 className="font-heading text-xl font-bold text-accent mb-2">
-                  {value.word}
-                </h4>
-                <p className="text-muted-foreground text-sm">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
