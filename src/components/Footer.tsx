@@ -149,15 +149,15 @@ const Footer = () => {
           {/* Developer Credit with Insta + LinkedIn */}
           <div className="flex items-center justify-center gap-2 text-xs text-primary-foreground/40 border-t border-white/10 pt-2">
             <span>
-              Designed & developed by{" "}
+              Designed & developed by{"  "}
               <span className="text-accent hover:text-accent/80 transition-colors">
-                Mehul Kumar Singh
+                MKS
               </span>
             </span>
 
             <div className="flex items-center gap-1">
               <a
-                href="https://www.instagram.com/your_instagram_here"
+                href="https://www.instagram.com/mehulkumarsinghh?igsh=Z28zZXlqMmlwdmV2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1 bg-white/10 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-300"
@@ -167,7 +167,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/your_linkedin_here"
+                href="https://www.linkedin.com/in/mehul-kumar-singh-655b5432b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1 bg-white/10 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-300"
