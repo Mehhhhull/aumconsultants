@@ -1,4 +1,12 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -139,33 +147,33 @@ const Footer = () => {
           </div>
 
           {/* Developer Credit with Insta + LinkedIn */}
-          <div className="flex items-center justify-center gap-3 text-sm text-primary-foreground/40 border-t border-white/10 pt-4">
+          <div className="flex items-center justify-center gap-2 text-xs text-primary-foreground/40 border-t border-white/10 pt-2">
             <span>
-              Designed and developed by{" "}
+              Designed & developed by{" "}
               <span className="text-accent hover:text-accent/80 transition-colors">
                 Mehul Kumar Singh
               </span>
             </span>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <a
                 href="https://www.instagram.com/your_instagram_here"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-white/10 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                className="p-1 bg-white/10 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram className="h-4 w-4" />
+                <Instagram className="h-3 w-3" />
               </a>
 
               <a
                 href="https://www.linkedin.com/in/your_linkedin_here"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-white/10 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+                className="p-1 bg-white/10 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-4 w-4" />
+                <Linkedin className="h-3 w-3" />
               </a>
             </div>
           </div>
