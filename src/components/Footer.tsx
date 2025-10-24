@@ -141,7 +141,7 @@ const Footer = () => {
           <div className="text-center text-sm text-primary-foreground/40 border-t border-white/10 pt-4">
             Designed and developed by{" "}
             <span className="text-accent hover:text-accent/80 transition-colors">
-              ThreesixtySpace
+              Mehul Kumar SIngh
             </span>
           </div>
         </div>
