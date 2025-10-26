@@ -68,8 +68,8 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      value: "aumconsultants@gmail.com",
-      action: "mailto:aumconsultants@gmail.com"
+      value: "info.aumconsultants@gmail.com",
+      action: "mailto:info.aumconsultants@gmail.com"
     },
     {
       icon: <Phone className="h-6 w-6" />,
