@@ -90,7 +90,7 @@ const Hero = () => {
           className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0"
         >
           AUM Consultants blends research, creativity, and digital intelligence
-          to help brands build influence, trust, and measurable growth.
+          to help brands build trust, influence, and measurable growth.
         </p>
 
         {/* CTA Buttons */}
