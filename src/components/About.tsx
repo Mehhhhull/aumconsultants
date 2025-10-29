@@ -124,20 +124,19 @@ const About = () => {
               </h3>
 
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Founded with the mission to help brands harness the power of
-                digital strategy, AUM Consultants blends creativity, data, and
-                technology to deliver measurable growth. We recognize that every
-                organization has unique goals, challenges, and audiences, and
-                our solutions are tailored to fit each context.
+                AUM Consultants is a strategic consulting firm helping
+                organizations transform how they communicate, grow, and connect
+                in a digital world. We specialize in crafting purpose-driven
+                digital strategies that merge human creativity with AI
+                intelligence — enabling brands to achieve sustainable,
+                measurable results.
               </p>
 
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Our team brings together strategic insight, industry experience,
-                and hands-on expertise to guide brands through meaningful
-                transformation. From startups to established enterprises, we
-                help organizations strengthen their digital presence, connect
-                with their audiences, and achieve sustainable, purpose-driven
-                impact.
+                Founded by Jitesh Sabharwal, a leader with 12+ years of
+                experience across Urban Company, DeNA, BIGO, Kwai, and PVR
+                Cinemas, AUM bridges business growth and cultural understanding
+                through storytelling, content strategy, and technology adoption.
               </p>
 
               {/* Expertise Areas */}
@@ -205,16 +204,12 @@ const About = () => {
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                With over 12 years of experience across leading Internet and
-                technology companies — Urban Company, DeNA (Pococha), BIGO,
-                Kwai, and PVR Cinemas — Jitesh brings deep expertise in business
-                development, operations, and strategic growth consulting. He has
-                built and scaled teams across India and Southeast Asia,
-                specializing in creator ecosystems, content strategy, and
-                digital community development. At AUM Consultants, Jitesh
-                applies this cross-functional experience to help organizations
-                move beyond vanity metrics and achieve sustainable digital
-                impact.
+                With over a decade of leadership across the internet and
+                technology industries, Jitesh brings deep expertise in business
+                development, content strategy, and digital transformation. At
+                AUM, he applies cross-functional experience to help
+                organizations move beyond vanity metrics and achieve sustainable
+                digital growth
               </p>
 
               {/* Founder Achievements */}
@@ -228,13 +223,7 @@ const About = () => {
                 <div className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-accent mr-3" />
                   <span className="text-sm text-foreground">
-                    Founder & Principal Consultant, AUM Consultants
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-accent mr-3" />
-                  <span className="text-sm text-foreground">
-                    Expertise in Creator Ecosystems & Content Strategy
+                    Expertise in Creator Ecosystems & Brand Consulting
                   </span>
                 </div>
                 <div className="flex items-center">
