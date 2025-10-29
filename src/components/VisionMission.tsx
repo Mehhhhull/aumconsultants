@@ -117,12 +117,12 @@ const VisionMission = () => {
     {
       icon: <Target className="h-8 w-8" />,
       title: "Our Vision",
-      description: "To transform how brands connect, communicate, and create impact — through research-driven creativity, cultural intelligence, and digital transformation consulting."
+      description: "To transform how brands connect, communicate, and create impact — through research-driven creativity, cultural intelligence, and digital strategy consulting."
     },
     {
       icon: <Eye className="h-8 w-8" />,
       title: "Our Mission", 
-      description: "To empower brands with authentic, insight-led, and measurable growth strategies, combining the precision of data with the depth of human understanding."
+      description: "To empower organizations with authentic, measurable growth strategies — blending data precision with human insight."
     }
   ];
 
