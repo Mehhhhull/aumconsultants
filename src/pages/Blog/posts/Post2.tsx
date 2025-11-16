@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import ShareButton from '@/components/ShareButton';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
@@ -53,15 +54,18 @@ const Post3 = () => {
       <article className="section-padding">
         <div className="max-w-4xl mx-auto px-4">
           {/* Meta Info */}
-          <div className="flex items-center gap-6 mb-8 pb-6 border-b border-border">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Calendar className="w-5 h-5" />
-              <span>October 30, 2025</span>
+          <div className="flex items-center justify-between gap-6 mb-8 pb-6 border-b border-border flex-wrap">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <Calendar className="w-5 h-5" />
+                <span>October 30, 2025</span>
+              </div>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <Clock className="w-5 h-5" />
+                <span>8 min read</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Clock className="w-5 h-5" />
-              <span>8 min read</span>
-            </div>
+            <ShareButton title="Top SEO Trends in 2025 — From Zero-Click to E-E-A-T, What Organizations Need to Know" />
           </div>
 
           {/* Article Body */}
