@@ -43,6 +43,16 @@ const Blog = () => {
   const navigate = useNavigate();
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
+  // Sort posts by date (latest first) and set first as featured
+  const sortedPosts = [...blogPosts].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+
+  const featuredPost = sortedPosts[0];
+  const otherPosts = sortedPosts.slice(1);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       cardsRef.current.forEach((card, index) => {
@@ -88,60 +98,117 @@ const Blog = () => {
         </div>
       </section>
 
+      {/* Featured Post */}
+      <section className="section-padding pt-12">
+        <div className="container-max">
+          <div
+            ref={(el) => (cardsRef.current[0] = el)}
+            className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl overflow-hidden shadow-elegant border border-primary/20 cursor-pointer group"
+            onClick={() => navigate(featuredPost.route)}
+          >
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Image */}
+              <div className="relative h-64 lg:h-full overflow-hidden">
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-md">
+                  Latest Post
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>{featuredPost.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    <span>{featuredPost.readTime}</span>
+                  </div>
+                </div>
+
+                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                  {featuredPost.title}
+                </h2>
+
+                <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+                  {featuredPost.description}
+                </p>
+
+                <div className="flex items-center gap-2 text-primary font-semibold text-lg group-hover:gap-4 transition-all">
+                  Read Full Article
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blog Grid */}
       <section className="section-padding">
         <div className="container-max">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+          <h2 className="font-heading text-3xl font-bold text-foreground mb-12 text-center">
+            More Articles
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {otherPosts.map((post, index) => (
               <div
                 key={post.id}
-                ref={(el) => (cardsRef.current[index] = el)}
-                className="professional-card group cursor-pointer"
-                onClick={index <= 1 ? () => navigate(post.route) : undefined} // first two clickable
+                ref={(el) => (cardsRef.current[index + 1] = el)}
+                className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 border border-primary/20 group cursor-pointer"
+                onClick={index === 0 ? () => navigate(post.route) : undefined}
               >
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-lg mb-6">
+                <div className="relative overflow-hidden h-56">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                {/* Meta Info */}
-                <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    <span>{post.date}</span>
+                {/* Content */}
+                <div className="p-6">
+                  {/* Meta Info */}
+                  <div className="flex items-center gap-4 mb-3 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>{post.date}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>{post.readTime}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{post.readTime}</span>
+
+                  {/* Title */}
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
+                    {post.description}
+                  </p>
+
+                  {/* Read More Button */}
+                  <div
+                    className={`flex items-center gap-2 text-primary font-semibold transition-all ${
+                      index === 0
+                        ? 'cursor-pointer group-hover:gap-3'
+                        : 'cursor-default opacity-60'
+                    }`}
+                  >
+                    {index === 0 ? 'Read Article' : 'Coming Soon'}
+                    {index === 0 && <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
                   </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="font-heading text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {post.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-muted-foreground mb-6 line-clamp-3">
-                  {post.description}
-                </p>
-
-                {/* Read More Button */}
-                <div
-                  className={`flex items-center gap-2 text-primary font-medium transition-all ${
-                    index <= 1
-                      ? 'cursor-pointer group-hover:gap-3'
-                      : 'cursor-default opacity-70 group-hover:gap-2 group-hover:text-primary'
-                  }`}
-                  onClick={index <= 1 ? () => navigate(post.route) : undefined} // only first clickable
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
             ))}

@@ -40,6 +40,16 @@ const Post3 = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-primary/50" />
+        <div className="absolute top-6 left-6 z-10">
+          <Button 
+            onClick={() => navigate('/blog')}
+            variant="outline"
+            className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Blog
+          </Button>
+        </div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-max px-4">
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center max-w-4xl mx-auto">
