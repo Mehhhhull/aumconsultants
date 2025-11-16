@@ -181,7 +181,7 @@ const About = () => {
 
           {/* Founder Section */}
           <div>
-            <div className="professional-card text-center">
+            <div className="bg-gradient-to-br from-blue-100 to-purple-100 border border-primary/20 p-8 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 text-center">
               <div className="relative mb-6">
                 <img
                   ref={imageRef}

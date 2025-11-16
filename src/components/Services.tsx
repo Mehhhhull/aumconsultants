@@ -152,10 +152,10 @@ const Services = () => {
   };
 
   return (
-    <section ref={sectionRef} id="services" className="section-padding">
+    <section ref={sectionRef} id="services" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
       <div className="container-max">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-up">
+        <div className="text-center mb-12 animate-fade-up">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
             Comprehensive Solutions for Modern Businesses
           </h2>
@@ -229,7 +229,7 @@ const Services = () => {
             {additionalServices.map((service, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-4 p-6 bg-background rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-up"
+                className="flex items-start space-x-4 p-6 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-up border border-primary/30"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-accent rounded-lg text-accent-foreground">

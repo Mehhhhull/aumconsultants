@@ -1,7 +1,8 @@
-import { Target, Eye, Heart, Shield, CheckCircle, Award, Lightbulb, Users2 } from 'lucide-react';
+import { Target, Eye, CheckCircle, Award, Lightbulb, Users2 } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import CompanyStrip from './CompanyStrip';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -143,7 +144,7 @@ const VisionMission = () => {
           {visionMission.map((item, index) => (
             <div 
               key={index}
-              className="professional-card text-center group animate-fade-up"
+              className="bg-gradient-to-br from-blue-100 to-purple-100 border border-primary/20 p-8 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 text-center group animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-2xl text-primary-foreground mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -162,7 +163,7 @@ const VisionMission = () => {
         </div>
 
         {/* Core Values Section */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-elegant">
+        <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 md:p-12 shadow-elegant border border-primary/20">
           <div className="text-center mb-12">
             <h3 className="font-heading text-3xl font-bold text-foreground mb-4">
               Our Core Values
@@ -177,7 +178,7 @@ const VisionMission = () => {
               <div 
                 key={index}
                 ref={(el) => (valuesRef.current[index] = el)}
-                className="group p-6 rounded-2xl border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+                className="group p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div className={`inline-flex items-center justify-center w-12 h-12 ${value.color} rounded-xl text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -214,6 +215,9 @@ const VisionMission = () => {
           </div>
         </div>
       </div>
+
+      {/* Company Logo Strip */}
+      <CompanyStrip />
     </section>
   );
 };
