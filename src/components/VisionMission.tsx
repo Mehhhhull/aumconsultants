@@ -29,7 +29,7 @@ const VisionMission = () => {
               scrollTrigger: {
                 trigger: card,
                 start: 'top 85%',
-                toggleActions: 'play none none reverse'
+                toggleActions: 'play none none none'
               },
               delay: index * 0.1
             }
@@ -71,7 +71,8 @@ const VisionMission = () => {
               scrollTrigger: {
                 trigger: statsRef.current,
                 start: 'top 80%',
-                toggleActions: 'play none none reverse'
+                toggleActions: 'play none none none',
+                once: true
               },
               snap: { innerHTML: 1 },
               onUpdate: function() {

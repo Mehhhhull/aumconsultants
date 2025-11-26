@@ -25,7 +25,8 @@ const About = () => {
           scrollTrigger: {
             trigger: contentRef.current,
             start: "top 80%",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
+            once: true
           },
         }
       );
@@ -43,7 +44,8 @@ const About = () => {
           scrollTrigger: {
             trigger: imageRef.current,
             start: "top 80%",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
+            once: true
           },
         }
       );

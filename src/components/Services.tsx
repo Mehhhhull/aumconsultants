@@ -44,8 +44,8 @@ const Services = () => {
               scrollTrigger: {
                 trigger: card,
                 start: "top 85%",
-                end: "top 50%",
-                toggleActions: "play none none reverse",
+                toggleActions: "play none none none",
+                once: true
               },
             }
           );

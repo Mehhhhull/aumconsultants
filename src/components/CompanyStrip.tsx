@@ -1,6 +1,13 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import bigoLogo from '@/assets/bigo-live-seeklogo.png';
+import denaLogo from '@/assets/DeNA_logo (1).png';
+import kwaiLogo from '@/assets/kwai-seeklogo.png';
+import pocochaLogo from '@/assets/Pococha_logo.png';
+import pvrLogo from '@/assets/PVRlogo.png';
+import urbanCompanyLogo from '@/assets/urban-company-logo-png.png';
+import yoozooLogo from '@/assets/yoozoo.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -8,15 +15,15 @@ const CompanyStrip = () => {
   const stripRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<gsap.core.Tween | null>(null);
 
-  // Company logos - you can replace these with actual logo URLs
+  // Company logos
   const companies = [
-    { name: 'Company 1', logo: 'https://via.placeholder.com/200x80/4F46E5/ffffff?text=Company+1' },
-    { name: 'Company 2', logo: 'https://via.placeholder.com/200x80/7C3AED/ffffff?text=Company+2' },
-    { name: 'Company 3', logo: 'https://via.placeholder.com/200x80/2563EB/ffffff?text=Company+3' },
-    { name: 'Company 4', logo: 'https://via.placeholder.com/200x80/059669/ffffff?text=Company+4' },
-    { name: 'Company 5', logo: 'https://via.placeholder.com/200x80/DC2626/ffffff?text=Company+5' },
-    { name: 'Company 6', logo: 'https://via.placeholder.com/200x80/EA580C/ffffff?text=Company+6' },
-    { name: 'Company 7', logo: 'https://via.placeholder.com/200x80/DB2777/ffffff?text=Company+7' },
+    { name: 'Urban Company', logo: urbanCompanyLogo },
+    { name: 'DeNA', logo: denaLogo },
+    { name: 'BIGO Live', logo: bigoLogo },
+    { name: 'Kwai', logo: kwaiLogo },
+    { name: 'PVR Cinemas', logo: pvrLogo },
+    { name: 'Pococha', logo: pocochaLogo },
+    { name: 'Yoozoo', logo: yoozooLogo },
   ];
 
   // Duplicate companies for seamless loop
@@ -74,7 +81,7 @@ const CompanyStrip = () => {
         {duplicatedCompanies.map((company, index) => (
           <div
             key={index}
-            className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105 bg-white rounded-lg p-4 shadow-md hover:shadow-lg"
+            className="flex-shrink-0 transition-all duration-300 hover:scale-105 bg-white rounded-lg p-4 shadow-md hover:shadow-lg"
           >
             <img
               src={company.logo}
