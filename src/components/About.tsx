@@ -184,7 +184,7 @@ const About = () => {
           {/* Founder Section */}
           <div>
             <div className="bg-gradient-to-br from-blue-100 to-purple-100 border border-primary/20 p-8 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 text-center">
-              <div className="relative mb-6">
+              <div className="relative mb-3">
                 <img
                   ref={imageRef}
                   src={founderImage}
@@ -192,9 +192,9 @@ const About = () => {
                   className="w-48 h-48 rounded-2xl mx-auto object-cover shadow-medium"
                   style={{ transformStyle: "preserve-3d" }}
                 />
-                <div className="absolute -bottom-4 -right-4 bg-gradient-accent text-accent-foreground px-4 py-2 rounded-lg font-medium shadow-medium">
-                  Founder & Principal Consultant
-                </div>
+              </div>
+              <div className="bg-gradient-accent text-accent-foreground px-4 py-2 rounded-lg font-medium shadow-medium inline-block mb-6">
+                Founder & Principal Consultant
               </div>
 
               <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
